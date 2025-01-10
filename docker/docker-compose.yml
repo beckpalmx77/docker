@@ -59,8 +59,8 @@ services:
       SA_PASSWORD: StrongPassword123
       ACCEPT_EULA: "Y"
     volumes:
-      - mssql_data:/var/opt/mssql  # เพิ่ม volume สำหรับ SQL Server
-      - ./backup:/var/opt/mssql/backup
+      - mssql_data:/var/opt/mssql:rw  # เพิ่ม volume สำหรับ SQL Server
+      - ./backup:/var/opt/mssql/backup:rw
     restart: always  # กำหนดให้ container นี้เริ่มใหม่เมื่อเครื่องบูต
 
   phpmyadmin:
